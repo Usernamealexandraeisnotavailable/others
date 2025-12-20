@@ -14,6 +14,13 @@ input[type="checkbox"] {
 	width: 30px;
 	height: 30px
 }
+a {
+	color: rgb(50,100,255);
+	text-decoration: none
+}
+a:hover {
+	border: rgb(50,100,255)
+}
 </style>
 <table width="100%" height="100%">
 <tr width="100%" height="100%">
@@ -253,11 +260,11 @@ $fonctions[count($fonctions)] = array (
 	]
 );
 $ecriture['decrel_alea'] = "dec";
-function fracrel_alea () {
+function relfrac_alea () {
 	return rel_alea().frac_alea();
 }
 $fonctions[count($fonctions)] = array (
-	"nom" => 'fracrel_alea',
+	"nom" => 'relfrac_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		"frac", // Fractions
@@ -267,12 +274,12 @@ $fonctions[count($fonctions)] = array (
 		"nonent", // Non-entières
 	]
 );
-$ecriture['fracrel_alea'] = "frac";
-function entfracrel_alea () {
+$ecriture['relfrac_alea'] = "frac";
+function entrelfrac_alea () {
 	return rel_alea().entfrac_alea();
 }
 $fonctions[count($fonctions)] = array (
-	"nom" => 'entfracrel_alea',
+	"nom" => 'entrelfrac_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		"frac", // Fractions
@@ -282,7 +289,7 @@ $fonctions[count($fonctions)] = array (
 		// "nonent", // Non-entières
 	]
 );
-$ecriture['entfracrel_alea'] = "frac";
+$ecriture['entrelfrac_alea'] = "frac";
 function entpc_alea () {
 	return espacements_en_trois(strval(intval(short_ent_alea())*100))."\\,\\%";
 }
@@ -344,7 +351,47 @@ $fonctions[count($fonctions)] = array (
 );
 $ecriture['decrelpc_alea'] = "pc";
 
+// DÉCOMPOSITION EN FACTEURS PREMIERS
 
+function dfp_alea () {
+	$retour = "";
+	foreach ([2,3,5,7] as $p) {
+		if (rand(0,1))
+			$retour .= "$p^{".rand(1,3)."}\\times";
+	}
+	$retour .= "/";
+	$retour = str_replace("\\times/","",$retour);
+	return $retour;
+}
+$fonctions[count($fonctions)] = array (
+	"nom" => 'dfp_alea',
+	"prerequis" => [
+		// "dec", // Écriture décimale
+		// "frac", // Fractions
+		// "sci", // Écriture scientifique
+		// "pc", // Pourcentage
+		// "rel", // Relatifs
+		// "nonent", // Non-entières
+		"dfp" // Décomposition en facteurs premiers (addition plus récente)
+	]
+);
+$ecriture['dfp_alea'] = "dfp";
+function dfprel_alea () {
+	return rel_alea().dfp_alea();
+}
+$fonctions[count($fonctions)] = array (
+	"nom" => 'dfprel_alea',
+	"prerequis" => [
+		// "dec", // Écriture décimale
+		// "frac", // Fractions
+		// "sci", // Écriture scientifique
+		// "pc", // Pourcentage
+		"rel", // Relatifs
+		// "nonent", // Non-entières
+		"dfp" // Décomposition en facteurs premiers (addition plus récente)
+	]
+);
+$ecriture['dfprel_alea'] = "dfp";
 
 // MENU
 
@@ -354,10 +401,13 @@ if (!isset($_GET["ok"])) {
 <form method="get"><br>
 <table><tr>
 <td style="font-size: 30pt">
+<big><b>Graphémat<i>h</i>ique</b></big><br><small><small><a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.php" target="_blank">code source</a></small></small><br>
 <label><input type="checkbox" name="dec" checked> Écriture décimale</label><br>
 <label><input type="checkbox" name="frac" checked> Fractions</label><br>
 <label><input type="checkbox" name="sci" checked> Écriture scientifique</label><br>
-<label><input type="checkbox" name="pc" checked> Pourcentage</label><br><small><small>
+<label><input type="checkbox" name="pc" checked> Pourcentage</label><br>
+<label><input type="checkbox" name="dfp" checked> Décomposition en facteurs premiers</label><br>
+<small><small>
 <label><input type="checkbox" name="rel" checked style="width: 18pt; height: 18pt"> <i>Relatifs</i></label><br>
 <label><input type="checkbox" name="nonent" checked style="width: 18pt; height: 18pt"> <i>Valeurs non-entières</i></label><br>
 <input type="submit" name="ok" value="OK" style="font-size: 30pt; width: 100%">
@@ -384,9 +434,12 @@ if (!isset($_GET["ok"])) {
 		"sci" => [
 			"<li>Quel est son ordre de grandeur&nbsp;?",
 			"<li>Quel est son exposant&nbsp;?",
-			"<li>Combien de chiffres significatifs&nbsp;?"
+			"<li>Combien de chiffres significatifs y a-t-il, dans cette écriture scientifique&nbsp;?"
 		],
-		"pc" => []
+		"pc" => [
+			"<li>Quel est son chiffre des unités&nbsp;?"
+		],
+		"dfp" => []
 	);
 	else
 	$specifiques = array (
@@ -470,6 +523,28 @@ if (!isset($_GET["ok"])) {
 				// "sci", // Écriture scientifique
 				// "pc", // Pourcentage
 				"rel", // Relatifs
+				// "nonent", // Non-entières
+			]
+		),
+		array (
+			"schema" => "<li>Donnez-en une écriture comme fraction irréductible.\n",
+			"prerequis" => [
+				// "dec", // Écriture décimale
+				"frac", // Fractions
+				// "sci", // Écriture scientifique
+				// "pc", // Pourcentage
+				// "rel", // Relatifs
+				// "nonent", // Non-entières
+			]
+		),
+		array (
+			"schema" => "<li>Donnez-en une écriture comme fraction réductible.\n",
+			"prerequis" => [
+				// "dec", // Écriture décimale
+				"frac", // Fractions
+				// "sci", // Écriture scientifique
+				// "pc", // Pourcentage
+				// "rel", // Relatifs
 				// "nonent", // Non-entières
 			]
 		),
@@ -573,6 +648,9 @@ if (!isset($_GET["ok"])) {
 			$questions[count($questions)] = $specifique."\n";
 		foreach (conversions_utilisables($ecriture[$fun]) as $conversion)
 			$questions[count($questions)] = $conversion."\n";
+		if (isset($_GET["dfp"]) and in_array($fun, ['ent_alea','entfrac_alea','entpc_alea','entsci_alea','entrel_alea','entrelfrac_alea','entrelpc_alea','entrelsci_alea'])) {
+			$questions[count($questions)] = "<li>Quel est son plus petit facteur premier&nbsp;?";
+		}
 		shuffle ($questions);
 		$nombre_restants = 6;
 		foreach ($questions as $question) {
@@ -581,7 +659,7 @@ if (!isset($_GET["ok"])) {
 			if ($nombre_restants == 0)
 				break;
 		}
-		print "<br><a href='' style='font-size: 50pt; color: rgb(50,100,255); text-decoration: none'>⟳</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?' style='font-size: 50pt; color: rgb(50,100,255); text-decoration: none'>⌫</a></table>";
+		print "<br><a href='' style='font-size: 50pt'>⟳</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?' style='font-size: 50pt'>⌫</a></table>";
 	}
 	
 }
