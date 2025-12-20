@@ -355,9 +355,15 @@ $ecriture['decrelpc_alea'] = "pc";
 
 function dfp_alea () {
 	$retour = "";
+	$aumoinsun = false;
 	foreach ([2,3,5,7] as $p) {
-		if (rand(0,1))
+		if (rand(0,1)) {
 			$retour .= "$p^{".rand(1,3)."}\\times";
+			$aumoinsun = true;
+		}
+		if (!$aumoinsun) {
+			return dfp_alea();
+		}
 	}
 	$retour .= "/";
 	$retour = str_replace("\\times/","",$retour);
@@ -398,7 +404,7 @@ $ecriture['dfprel_alea'] = "dfp";
 if (!isset($_GET["ok"])) {
 ?>
 
-<form method="get"><br>
+<form method="get">
 <table><tr>
 <td style="font-size: 30pt">
 <big><b>Graphémat<i>h</i>ique</b></big><br><small><small><a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.php" target="_blank">code source</a></small></small><br>
@@ -659,7 +665,7 @@ if (!isset($_GET["ok"])) {
 			if ($nombre_restants == 0)
 				break;
 		}
-		print "<br><a href='' style='font-size: 50pt'>⟳</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?' style='font-size: 50pt'>⌫</a></table>";
+		print "<center><a href='' style='font-size: 50pt'>⟳</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?' style='font-size: 50pt'>⌫</a></table>";
 	}
 	
 }
