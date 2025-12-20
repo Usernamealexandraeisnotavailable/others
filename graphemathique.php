@@ -676,7 +676,7 @@ if (!isset($_GET["ok"])) {
 		foreach (conversions_utilisables($ecriture[$fun]) as $conversion)
 			$questions[count($questions)] = $conversion."\n";
 		if (isset($_GET["dfp"]) and in_array($fun, ['ent_alea','entfrac_alea','entpc_alea','entsci_alea','entrel_alea','entrelfrac_alea','entrelpc_alea','entrelsci_alea'])) {
-			$questions[count($questions)] = "<li>Quels sont ses facteurs premiers entre 2 inclu et 11 inclu&nbsp;?";
+			$questions[count($questions)] = "<li>ses facteurs premiers entre 2 inclu et 11 inclu&nbsp;?";
 		}
 		shuffle ($questions);
 		$nombre_restants = 5;
