@@ -428,45 +428,66 @@ if (!isset($_GET["ok"])) {
 	if (isset($_GET["nonent"]))
 	$specifiques = array (
 		"dec" => [
-			"<li>Quelle est sa partie entière&nbsp;?",
-			"<li>Quelle est sa partie décimale&nbsp;?",
-			"<li>Quel est son chiffre des unités&nbsp;?",
-			"<li>Donnez-en un arrondi à l'unité près."
+			"<li>sa partie entière&nbsp;!",
+			"<li>sa partie décimale&nbsp;!",
+			"<li>un arrondi à l'unité près&nbsp;!"
 		],
 		"frac" => [
-			"<li>Quel est son numérateur&nbsp;?",
-			"<li>Quel est son dénominateur&nbsp;?"
+			"<li>son numérateur&nbsp;!",
+			"<li>son dénominateur&nbsp;!"
 		],
 		"sci" => [
-			"<li>Quel est son ordre de grandeur&nbsp;?",
-			"<li>Quel est son exposant&nbsp;?",
-			"<li>Combien de chiffres significatifs y a-t-il, dans cette écriture scientifique&nbsp;?"
+			"<li>son ordre de grandeur&nbsp;!",
+			"<li>son exposant&nbsp;!",
+			"<li>son nombre de chiffres significatifs&nbsp;!"
 		],
-		"pc" => [
-			"<li>Quel est son chiffre des unités&nbsp;?"
-		],
+		"pc" => [],
 		"dfp" => []
 	);
 	else
 	$specifiques = array (
 		"dec" => [
-			"<li>Quelle est sa partie entière&nbsp;?",
-			"<li>Quel est son chiffre des unités&nbsp;?"
+			"<li>sa partie entière&nbsp;!",
+			"<li>sa partie décimale&nbsp;!"
 		],
 		"frac" => [
-			"<li>Quel est son numérateur&nbsp;?",
-			"<li>Quel est son dénominateur&nbsp;?"
+			"<li>son numérateur&nbsp;!",
+			"<li>son dénominateur&nbsp;!"
 		],
 		"sci" => [
-			"<li>Quel est son ordre de grandeur&nbsp;?",
-			"<li>Quel est son exposant&nbsp;?"
+			"<li>son ordre de grandeur&nbsp;!",
+			"<li>son exposant&nbsp;!",
+			"<li>son nombre de chiffres significatifs&nbsp;!"
 		],
-		"pc" => []
+		"pc" => [],
+		"dfp" => []
 	);
 	
 	$conversions = array (
 		array (
-			"schema" => "<li>Donnez-en une écriture décimale.\n",
+			"schema" => "<li>son chiffre des unités&nbsp;!\n",
+			"prerequis" => [
+				// "dec", // Écriture décimale
+				// "frac", // Fractions
+				// "sci", // Écriture scientifique
+				// "pc", // Pourcentage
+				// "rel", // Relatifs
+				// "nonent", // Non-entières
+			]
+		),
+		array (
+			"schema" => "<li>son chiffre des dizaines&nbsp;!\n",
+			"prerequis" => [
+				// "dec", // Écriture décimale
+				// "frac", // Fractions
+				// "sci", // Écriture scientifique
+				// "pc", // Pourcentage
+				// "rel", // Relatifs
+				// "nonent", // Non-entières
+			]
+		),
+		array (
+			"schema" => "<li>une écriture décimale&nbsp;!\n",
 			"prerequis" => [
 				"dec", // Écriture décimale
 				// "frac", // Fractions
@@ -478,7 +499,7 @@ if (!isset($_GET["ok"])) {
 			"redondance" => "dec"
 		),
 		array (
-			"schema" => "<li>Donnez-en une écriture décimale, avec au moins ".rand(2,5)." chiffres après la virgule.\n",
+			"schema" => "<li>une écriture décimale, avec au moins ".rand(2,5)." chiffres après la virgule&nbsp;!\n",
 			"prerequis" => [
 				"dec", // Écriture décimale
 				// "frac", // Fractions
@@ -489,7 +510,7 @@ if (!isset($_GET["ok"])) {
 			]
 		),
 		array (
-			"schema" => "<li>Donnez-en une écriture comme fraction qui n'est pas une fraction décimale.\n",
+			"schema" => "<li>une écriture comme fraction qui n'est pas une fraction décimale&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				"frac", // Fractions
@@ -500,7 +521,7 @@ if (!isset($_GET["ok"])) {
 			]
 		),
 		array (
-			"schema" => "<li>Donnez-en une écriture comme fraction décimale.\n",
+			"schema" => "<li>une écriture comme fraction décimale.\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				"frac", // Fractions
@@ -511,7 +532,7 @@ if (!isset($_GET["ok"])) {
 			]
 		),
 		array (
-			"schema" => "<li>Donnez-en une écriture comme fraction avec un numérateur négatif.\n",
+			"schema" => "<li>une écriture comme fraction avec un numérateur négatif&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				"frac", // Fractions
@@ -522,7 +543,7 @@ if (!isset($_GET["ok"])) {
 			]
 		),
 		array (
-			"schema" => "<li>Donnez-en une écriture comme fraction avec un dénominateur négatif.\n",
+			"schema" => "<li>une écriture comme fraction avec un dénominateur négatif&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				"frac", // Fractions
@@ -533,7 +554,7 @@ if (!isset($_GET["ok"])) {
 			]
 		),
 		array (
-			"schema" => "<li>Donnez-en une écriture comme fraction irréductible.\n",
+			"schema" => "<li>une écriture comme fraction irréductible&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				"frac", // Fractions
@@ -544,7 +565,7 @@ if (!isset($_GET["ok"])) {
 			]
 		),
 		array (
-			"schema" => "<li>Donnez-en une écriture comme fraction réductible.\n",
+			"schema" => "<li>une écriture comme fraction réductible&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				"frac", // Fractions
@@ -555,7 +576,7 @@ if (!isset($_GET["ok"])) {
 			]
 		),
 		array (
-			"schema" => "<li>Donnez-en une écriture scientifique.\n",
+			"schema" => "<li>une écriture scientifique&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
@@ -567,7 +588,7 @@ if (!isset($_GET["ok"])) {
 			"redondance" => "sci"
 		),
 		array (
-			"schema" => "<li>Donnez-en une écriture scientifique, avec au moins ".rand(2,5)." chiffres significatifs.\n",
+			"schema" => "<li>une écriture scientifique, avec au moins ".rand(2,5)." chiffres significatifs&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
@@ -578,7 +599,7 @@ if (!isset($_GET["ok"])) {
 			]
 		),
 		array (
-			"schema" => "<li>Donnez-en une écriture en tant que pourcentage.\n",
+			"schema" => "<li>une écriture en tant que pourcentage&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
@@ -590,7 +611,7 @@ if (!isset($_GET["ok"])) {
 			"redondance" => "pc"
 		),
 		array (
-			"schema" => "<li>Donnez-en une écriture qui commence par un signe moins.\n",
+			"schema" => "<li>une écriture qui commence par un signe moins&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
@@ -648,7 +669,7 @@ if (!isset($_GET["ok"])) {
 		$fun = $utilisables[rand(0,count($utilisables)-1)];
 		print "<br>\n<span style='color: white'>";
 		print "\\(\\color{black}\\sf".$fun()."\\)";
-		print "</span><table><tr><td><ol style='font-size: 20pt'><br><br>";
+		print "</span><table><tr><td><ul style='font-size: 20pt'><br><br>Trouvez-lui...<br>";
 		$questions = [];
 		foreach ($specifiques[$ecriture[$fun]] as $specifique)
 			$questions[count($questions)] = $specifique."\n";
@@ -658,7 +679,7 @@ if (!isset($_GET["ok"])) {
 			$questions[count($questions)] = "<li>Quels sont ses facteurs premiers entre 2 inclu et 11 inclu&nbsp;?";
 		}
 		shuffle ($questions);
-		$nombre_restants = 6;
+		$nombre_restants = 5;
 		foreach ($questions as $question) {
 			print $question;
 			$nombre_restants--;
