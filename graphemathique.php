@@ -409,7 +409,7 @@ if (!isset($_GET["ok"])) {
 <td style="font-size: 30pt"><span style="font-size: 5pt"><br></span>
 <big><b>Graphémat<i>h</i>ique</b></big><br><small><small>Un casse-têtes qui mêle maths et écriture&nbsp;!
 <center style="background-color: grey; color: white">
-<small style="font-family: Times New Roman"><br><b>Graphématique.</b> <i>n.m.</i> Étude linguistique des<br>systèmes d'écriture et de leurs composantes<br>de base, i.e. les graphèmes.<br><br></small></small></small>
+<small style="font-family: Times New Roman"><br><b>Graphématique.</b> <i>n.f.</i> Étude linguistique des<br>systèmes d'écriture et de leurs composantes<br>de base, i.e. les graphèmes.<br><br></small></small></small>
 </center>
 <small><small><a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.php" target="_blank">code source</a></small></small><br>
 Nombre de questions (max.)&nbsp;: <input type="number" name="seuil_max" min="1" max="10" value="5" style="font-size: 30pt; text-align: center"><br>
