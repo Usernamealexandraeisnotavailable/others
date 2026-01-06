@@ -439,7 +439,8 @@ Nombre de questions (max.)&nbsp;: <input type="number" name="seuil_max" min="1" 
 		],
 		"frac" => [
 			"<li>son numérateur&nbsp;!",
-			"<li>son dénominateur&nbsp;!"
+			"<li>son dénominateur&nbsp;!",
+			"<li>une forme sous fraction irréductible&nbsp;!"
 		],
 		"sci" => [
 			"<li>son ordre de grandeur&nbsp;!",
@@ -555,17 +556,6 @@ Nombre de questions (max.)&nbsp;: <input type="number" name="seuil_max" min="1" 
 				// "sci", // Écriture scientifique
 				// "pc", // Pourcentage
 				"rel", // Relatifs
-				// "nonent", // Non-entières
-			]
-		),
-		array (
-			"schema" => "<li>une écriture comme fraction irréductible&nbsp;!\n",
-			"prerequis" => [
-				// "dec", // Écriture décimale
-				"frac", // Fractions
-				// "sci", // Écriture scientifique
-				// "pc", // Pourcentage
-				// "rel", // Relatifs
 				// "nonent", // Non-entières
 			]
 		),
