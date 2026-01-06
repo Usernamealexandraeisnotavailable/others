@@ -410,7 +410,7 @@ if (!isset($_GET["ok"])) {
 <big><b>Graphémat<i>h</i>ique</b></big><br><small><small>Un casse-têtes qui mêle maths et écriture&nbsp;!<br>
 <a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.php" target="_blank">code source</a></small></small>
 <center>
-<small><small><small style="font-family: Times New Roman"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Graphématique.</b> <i>n.m.</i> Étude linguistique des<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;systèmes d'écriture et de leurs composantes<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;de base, i.e. les graphèmes.<br><br></small></small></small>
+<small><small><small style="font-family: Times New Roman"><br><b>Graphématique.</b> <i>n.m.</i> Étude linguistique des<br>systèmes d'écriture et de leurs composantes<br>de base, i.e. les graphèmes.<br><br></small></small></small>
 </center>
 Nombre de questions (max.)&nbsp;: <input type="number" name="seuil_max" min="1" max="10" value="5" style="font-size: 30pt; text-align: center"><br>
 <label><input type="checkbox" name="dec"<?php if (rand(0,1)) { ?> checked <?php } ?>> Écriture décimale</label><br>
