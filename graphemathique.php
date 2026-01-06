@@ -60,6 +60,7 @@ function ent_alea () {
         $retour .= strval(rand(0,9));
         $fini = rand(0,1); // proba 1/2
     }
+	// loi géométrique de paramètre 1/2 sur la longueur de l'entier généré
     return espacements_en_trois($retour);
 }
 $fonctions[count($fonctions)] = array (
@@ -81,6 +82,7 @@ function short_ent_alea () {
         $retour .= strval(rand(0,9));
         $fini = 1 - rand(0,1)*rand(0,1); // proba 3/4
     }
+	// loi géométrique de paramètre 1/4 sur la longueur de l'entier généré
     return $retour;
 }
 
@@ -98,13 +100,14 @@ function denom_alea () {
         $retour_int *= 5;
         $fini = 1-rand(0,1)*rand(0,1); // proba 3/4
     }
-    return $retour_int;
-}
-function entfrac_alea () {
 	$multi = 1;
 	if (rand(0,1)*rand(0,1)) // proba 1/4
 		$multi = 3;
-	$denom = denom_alea()*$multi;
+    return $retour_int*$multi;
+	// les seuls facteurs premiers sont 2, 3 et 5, et 9 n'en est jamais un facteur
+}
+function entfrac_alea () {
+	$denom = denom_alea();
     return "\\frac{".espacements_en_trois(strval(intval(short_ent_alea())*$denom))."}{".espacements_en_trois(strval($denom))."}";
 }
 $fonctions[count($fonctions)] = array (
@@ -120,10 +123,7 @@ $fonctions[count($fonctions)] = array (
 );
 $ecriture['entfrac_alea'] = "frac";
 function frac_alea () {
-	$multi = 1;
-	if (rand(0,1)*rand(0,1)) // proba 1/4
-		$multi = 3;
-    return "\\frac{".espacements_en_trois(strval(intval(str_replace("\\,","",ent_alea()))*$multi))."}{".espacements_en_trois(strval(denom_alea()*$multi))."}";
+    return "\\frac{".espacements_en_trois(strval(intval(str_replace("\\,","",ent_alea()))))."}{".espacements_en_trois(strval(denom_alea()))."}";
 }
 $fonctions[count($fonctions)] = array (
 	"nom" => 'frac_alea',
@@ -358,7 +358,7 @@ function dfp_alea () {
 	$aumoinsun = false;
 	foreach ([2,3,5,7] as $p) {
 		if (rand(0,1)) {
-			$retour .= "$p^{".rand(1,3)."}\\times";
+			$retour .= "$p^{".rand(1,max(2,6-$p))."}\\times";
 			$aumoinsun = true;
 		}
 		if (!$aumoinsun) {
