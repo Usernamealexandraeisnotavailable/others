@@ -1,4 +1,4 @@
-<title>Graphémathique (working title)</title>
+<title>Graphémathique</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -406,16 +406,21 @@ if (!isset($_GET["ok"])) {
 
 <form method="get">
 <table><tr>
-<td style="font-size: 30pt">
-<big><b>Graphémat<i>h</i>ique</b></big><br><small><small><a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.php" target="_blank">code source</a></small></small><br>
-<label><input type="checkbox" name="dec" checked> Écriture décimale</label><br>
-<label><input type="checkbox" name="frac" checked> Fractions</label><br>
-<label><input type="checkbox" name="sci" checked> Écriture scientifique</label><br>
-<label><input type="checkbox" name="pc" checked> Pourcentage</label><br>
-<label><input type="checkbox" name="dfp" checked> Décomposition en facteurs premiers</label><br>
+<td style="font-size: 30pt"><span style="font-size: 5pt"><br></span>
+<big><b>Graphémat<i>h</i>ique</b></big><br><small><small>Un casse-têtes qui mêle maths et écriture&nbsp;!<br>
+<a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.php" target="_blank">code source</a></small></small>
+<center>
+<small><small><small style="font-family: Times New Roman"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Graphématique.</b> <i>n.m.</i> Étude linguistique des<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;systèmes d'écriture et de leurs composantes<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;de base, i.e. les graphèmes.<br><br></small></small></small>
+</center>
+Nombre de questions (max.)&nbsp;: <input type="number" name="seuil_max" min="1" max="10" value="5" style="font-size: 30pt; text-align: center"><br>
+<label><input type="checkbox" name="dec"<?php if (rand(0,1)) { ?> checked <?php } ?>> Écriture décimale</label><br>
+<label><input type="checkbox" name="frac"<?php if (rand(0,1)) { ?> checked <?php } ?>> Fractions</label><br>
+<label><input type="checkbox" name="sci"<?php if (rand(0,1)) { ?> checked <?php } ?>> Écriture scientifique</label><br>
+<label><input type="checkbox" name="pc"<?php if (rand(0,1)) { ?> checked <?php } ?>> Pourcentage</label><br>
+<label><input type="checkbox" name="dfp"<?php if (rand(0,1)) { ?> checked <?php } ?>> Décomposition en facteurs premiers</label><br>
 <small><small>
-<label><input type="checkbox" name="rel" checked style="width: 18pt; height: 18pt"> <i>Relatifs</i></label><br>
-<label><input type="checkbox" name="nonent" checked style="width: 18pt; height: 18pt"> <i>Valeurs non-entières</i></label><br>
+<label><input type="checkbox" name="rel"<?php if (rand(0,1)) { ?> checked <?php } ?> style="width: 18pt; height: 18pt"> <i>Relatifs</i></label><br>
+<label><input type="checkbox" name="nonent"<?php if (rand(0,1)) { ?> checked <?php } ?> style="width: 18pt; height: 18pt"> <i>Valeurs non-entières</i></label><br>
 <input type="submit" name="ok" value="OK" style="font-size: 30pt; width: 100%">
 </table>
 </form>
@@ -676,10 +681,10 @@ if (!isset($_GET["ok"])) {
 		foreach (conversions_utilisables($ecriture[$fun]) as $conversion)
 			$questions[count($questions)] = $conversion."\n";
 		if (isset($_GET["dfp"]) and in_array($fun, ['ent_alea','entfrac_alea','entpc_alea','entsci_alea','entrel_alea','entrelfrac_alea','entrelpc_alea','entrelsci_alea'])) {
-			$questions[count($questions)] = "<li>ses facteurs premiers entre 2 inclu et 11 inclu&nbsp;!";
+			$questions[count($questions)] = "<li>ses facteurs premiers entre 2 inclu et 5 inclu&nbsp;!";
 		}
 		shuffle ($questions);
-		$nombre_restants = 5;
+		$nombre_restants = intval($_GET["seuil_max"]);
 		foreach ($questions as $question) {
 			print $question;
 			$nombre_restants--;
