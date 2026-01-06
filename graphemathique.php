@@ -440,7 +440,7 @@ Nombre de questions (max.)&nbsp;: <input type="number" name="seuil_max" min="1" 
 		"frac" => [
 			"<li>son numérateur&nbsp;!",
 			"<li>son dénominateur&nbsp;!",
-			"<li>une forme sous fraction irréductible&nbsp;!"
+			"<li>une écriture sous forme de fraction irréductible&nbsp;!"
 		],
 		"sci" => [
 			"<li>son ordre de grandeur&nbsp;!",
@@ -458,7 +458,8 @@ Nombre de questions (max.)&nbsp;: <input type="number" name="seuil_max" min="1" 
 		],
 		"frac" => [
 			"<li>son numérateur&nbsp;!",
-			"<li>son dénominateur&nbsp;!"
+			"<li>son dénominateur&nbsp;!",
+			"<li>une écriture sous forme de fraction irréductible&nbsp;!"
 		],
 		"sci" => [
 			"<li>son ordre de grandeur&nbsp;!",
@@ -527,7 +528,7 @@ Nombre de questions (max.)&nbsp;: <input type="number" name="seuil_max" min="1" 
 			]
 		),
 		array (
-			"schema" => "<li>une écriture comme fraction décimale.\n",
+			"schema" => "<li>une écriture comme fraction décimale&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				"frac", // Fractions
