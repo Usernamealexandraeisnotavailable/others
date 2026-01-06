@@ -418,7 +418,7 @@ if (!isset($_GET["ok"])) {
 <small style="font-family: Times New Roman"><br><b>Graphématique.</b> <i>n.f.</i> Étude linguistique des<br>systèmes d'écriture et de leurs composantes<br>de base, i.e. les graphèmes.<br><br></small></small></small>
 </center>
 <small><small><a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.php" target="_blank">code source</a></small></small><br>
-Nombre de questions (max.)&nbsp;: <input type="number" name="seuil_max" min="1" max="10" value="5" style="font-size: 30pt; text-align: center"><br>
+Nombre de questions (max.)&nbsp;: <input type="number" name="seuil_max" min="1" max="5" value="3" style="font-size: 30pt; text-align: center"><br>
 <label><input type="checkbox" name="dec"<?php if (rand(0,1)) { ?> checked <?php } ?>> Écriture décimale</label><br>
 <label><input type="checkbox" name="frac"<?php if (rand(0,1)) { ?> checked <?php } ?>> Fractions</label><br>
 <label><input type="checkbox" name="sci"<?php if (rand(0,1)) { ?> checked <?php } ?>> Écriture scientifique</label><br>
@@ -439,9 +439,9 @@ Nombre de questions (max.)&nbsp;: <input type="number" name="seuil_max" min="1" 
 	if (isset($_GET["nonent"]))
 	$specifiques = array (
 		"dec" => [
-			"<li>sa partie entière&nbsp;!",
-			"<li>sa partie décimale&nbsp;!",
-			"<li>un arrondi à l'unité près&nbsp;!"
+			"<li>un arrondi à l'unité près&nbsp;!",
+			"<li>un arrondi au dixième près&nbsp;!",
+			"<li>un arrondi au centième près&nbsp;!"
 		],
 		"frac" => [
 			"<li>son numérateur&nbsp;!",
