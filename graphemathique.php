@@ -20,6 +20,10 @@ input[type="checkbox"] {
 	width: 30px;
 	height: 30px
 }
+form {
+	margin : 0pt;
+	padding : 0pt
+}
 a {
 	color: rgb(50,100,255);
 	text-decoration: none
@@ -408,25 +412,26 @@ $ecriture['dfprel_alea'] = "dfp";
 // MENU
 
 if (!isset($_GET["ok"])) {
+
 ?>
 
 <form method="get">
 <table><tr>
-<td style="font-size: 30pt"><span style="font-size: 5pt"><br></span>
-<big><b>Graphémat<i>h</i>ique</b></big><br><small><small>Un casse-têtes qui mêle maths et écriture&nbsp;!
+<td style="font-size: 25pt">
+<big><b><a href="?">Graphémat<i>h</i>ique</a></b></big><br><small><small>Un casse-têtes qui mêle maths et écriture&nbsp;!
 <center style="background-color: grey; color: white">
 <small style="font-family: Times New Roman"><br><b>Graphématique.</b> <i>n.f.</i> Étude linguistique des<br>systèmes d'écriture et de leurs composantes<br>de base, i.e. les graphèmes.<br><br></small></small></small>
 </center>
 <small><small><a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.php" target="_blank">code source</a></small></small><br>
-Nombre de questions (max.)&nbsp;: <input type="number" name="seuil_max" min="1" max="5" value="<?=rand(1,5);?>" style="font-size: 30pt; text-align: center"><br>
-<label><input type="checkbox" name="dec"<?php if (rand(0,1)) { ?> checked <?php } ?>> Écriture décimale</label><br>
-<label><input type="checkbox" name="frac"<?php if (rand(0,1)) { ?> checked <?php } ?>> Fractions</label><br>
-<label><input type="checkbox" name="sci"<?php if (rand(0,1)) { ?> checked <?php } ?>> Écriture scientifique</label><br>
-<label><input type="checkbox" name="pc"<?php if (rand(0,1)) { ?> checked <?php } ?>> Pourcentage</label><br>
-<label><input type="checkbox" name="dfp"<?php if (rand(0,1)) { ?> checked <?php } ?>> Décomposition en facteurs premiers</label><br>
+<b style="color: rgb(255, 0, 127)">Nombre de questions (max.)&nbsp;:</b> <input type="number" name="seuil_max" min="1" max="5" required style="font-size: 25pt; text-align: center" value=""><br> <!-- l'attribut required permet de faire en sorte que l'utilisateur doive lui-même saisir le nombre de questions à générer -->
+<label><input type="checkbox" name="dec"<?php if (rand(0,10) == 0) { ?> checked <?php } ?>> Écriture décimale</label><br>
+<label><input type="checkbox" name="frac"<?php if (rand(0,10) == 0) { ?> checked <?php } ?>> Fractions</label><br>
+<label><input type="checkbox" name="sci"<?php if (rand(0,10) == 0) { ?> checked <?php } ?>> Écriture scientifique</label><br>
+<label><input type="checkbox" name="pc"<?php if (rand(0,10) == 0) { ?> checked <?php } ?>> Pourcentage</label><br>
+<label><input type="checkbox" name="dfp"<?php if (rand(0,10) == 0) { ?> checked <?php } ?>> Décomposition en facteurs premiers</label><br>
 <small><small>
-<label><input type="checkbox" name="rel"<?php if (rand(0,1)) { ?> checked <?php } ?> style="width: 18pt; height: 18pt"> <i>Relatifs</i></label><br>
-<label><input type="checkbox" name="nonent"<?php if (rand(0,1)) { ?> checked <?php } ?> style="width: 18pt; height: 18pt"> <i>Valeurs non-entières</i></label><br>
+<label><input type="checkbox" name="rel"<?php if (rand(0,10) != 0) { ?> checked <?php } ?> style="width: 18pt; height: 18pt"> <i>Relatifs</i></label><br>
+<label><input type="checkbox" name="nonent"<?php if (rand(0,10) != 0) { ?> checked <?php } ?> style="width: 18pt; height: 18pt"> <i>Valeurs non-entières</i></label><br>
 <input type="submit" name="ok" value="OK" style="font-size: 30pt; width: 100%">
 </table>
 </form>
