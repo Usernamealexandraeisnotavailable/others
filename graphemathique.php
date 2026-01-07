@@ -11,7 +11,7 @@ if (isset($_GET["graine"])) {
 } else $graine = rand(1,1000000);
 srand($graine);
 ?>
-<meta name="description" content="Un casse-têtes qui mêle maths et écriture&nbsp;!">
+<meta name="description" content="Un casse-tête qui mêle maths et écriture&nbsp;!">
 <!-- Le jeu utilise la génération procédurale : Chaque "partie" est générée aléatoirement, il n'y a pas de banque d'exercices prédéfinie. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -432,7 +432,7 @@ if (!isset($_GET["seuil_max"])) {
 <form method="get">
 <table><tr>
 <td style="font-size: 25pt">
-<big><b><a href="?">Graphémat<i>h</i>ique</a></b></big><br><small><small>Un casse-têtes qui mêle maths et écriture&nbsp;!
+<big><b><a href="?">Graphémat<i>h</i>ique</a></b></big><br><small><small>Un casse-tête qui mêle maths et écriture&nbsp;!
 <center style="background-color: grey; color: white">
 <small style="font-family: Times New Roman"><br><b>Graphématique.</b> <i>n.f.</i> Étude linguistique des<br>systèmes d'écriture et de leurs composantes<br>de base, i.e. les graphèmes.<br><br></small></small></small>
 </center>
