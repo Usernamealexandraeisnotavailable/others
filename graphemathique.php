@@ -489,8 +489,8 @@ if (!isset($_GET["seuil_max"])) {
 <small><small><a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.php" target="_blank">code source</a></small></small><br>
 <b style="color: rgb(255, 0, 127)">Nombre de questions (max.)&nbsp;:</b> <input type="number" name="seuil_max" min="1" max="5" required style="font-size: 25pt; text-align: center" value=""><br>
 <!-- L'attribut required permet de faire en sorte que l'utilisateur doive lui-même saisir le nombre de questions à générer. (Maximum 5 pour éviter d'en avoir trop à chaque partie.) -->
-<label><input type="checkbox" name="rel"<?php if (rand(0,10) != 0) { ?> checked <?php } ?>> <i style="color: rgb(127,127,127)">Relatifs</i></label><br>
-<label><input type="checkbox" name="nonent"<?php if (rand(0,10) != 0) { ?> checked <?php } ?>> <i style="color: rgb(127,127,127)">Valeurs non-entières</i></label><br>
+<label><input type="checkbox" name="rel"<?php if (rand(0,10) != 0) { ?> checked <?php } ?>> <i style="color: rgb(255,127,127)">Relatifs</i></label><br>
+<label><input type="checkbox" name="nonent"<?php if (rand(0,10) != 0) { ?> checked <?php } ?>> <i style="color: rgb(255,127,127)">Valeurs non-entières</i></label><br>
 <!-- Ces options-ci ne permettent pas de générer des questions à elles seules, donc le fait qu'elles soient cochées automatiquement la plupart du temps (aléatoirement) permet de montrer qu'il s'agit de cases à cocher. -->
 <label><input type="checkbox" name="dec"> Écriture décimale</label><br>
 <label><input type="checkbox" name="frac"> Fractions</label><br>
