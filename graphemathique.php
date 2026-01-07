@@ -525,9 +525,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 		],
 		"pc" => [],
 		"dfp" => [],
-		"bin" => [
-			"<li>son écriture en base dix&nbsp;!"
-		]
+		"bin" => []
 	);
 	
 	$conversions = array (
