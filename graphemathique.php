@@ -477,10 +477,7 @@ if (!isset($_GET["ok"])) {
 	);
 	else
 	$specifiques = array (
-		"dec" => [
-			"<li>sa partie entière&nbsp;!",
-			"<li>sa partie décimale&nbsp;!"
-		],
+		"dec" => [],
 		"frac" => [
 			"<li>son numérateur&nbsp;!",
 			"<li>son dénominateur&nbsp;!",
