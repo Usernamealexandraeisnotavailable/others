@@ -126,9 +126,11 @@ function entfrac_alea () {
 	$multi = 1;
 	if (rand(0,1)*rand(0,1)) // proba 1/4
 		$multi = 3;
-	// ça permet d'avoir des fois des dénominateurs multiples de 3
+	elseif (rand(0,1)*rand(0,1)) // proba 1/4
+		$multi = 7;
 	$denom = denom_alea()*$multi;
     return "\\frac{".espacements_en_trois(strval(intval(short_ent_alea())*$denom*$multi))."}{".espacements_en_trois(strval($denom*$multi))."}";
+	// ça permet d'avoir des fois des dénominateurs multiples de 3 xor de 7, tout en gardant un développement décimal fini
 }
 $fonctions[count($fonctions)] = array (
 	"nom" => 'entfrac_alea',
@@ -146,8 +148,10 @@ function frac_alea () {
 	$multi = 1;
 	if (rand(0,1)*rand(0,1)) // proba 1/4
 		$multi = 3;
-	// ça permet d'avoir des fois des dénominateurs multiples de 3
+	elseif (rand(0,1)*rand(0,1)) // proba 1/4
+		$multi = 7;
     return "\\frac{".espacements_en_trois(strval(intval(str_replace("\\,","",ent_alea()))*$multi))."}{".espacements_en_trois(strval(denom_alea()*$multi))."}";
+	// ça permet d'avoir des fois des dénominateurs multiples de 3 xor de 7, tout en gardant un développement décimal fini
 }
 $fonctions[count($fonctions)] = array (
 	"nom" => 'frac_alea',
