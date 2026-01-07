@@ -703,7 +703,12 @@ if (!isset($_GET["ok"])) {
 			if ($nombre_restants == 0)
 				break;
 		}
-		print "<center><span style='font-size: 30pt'>Graine&nbsp;: <a href='".$_SERVER['REQUEST_URI']."&graine=$graine' style='font-family: courier; font-size: 30pt'>$graine</span></span><br><a href='' style='font-size: 50pt'>⟳</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?' style='font-size: 50pt'>⌫</a></table>";
+		if (substr_count($_SERVER['REQUEST_URI'], "graine") > 0) {
+			$uri = substr($_SERVER['REQUEST_URI'], 0, strpos($_SERVER['REQUEST_URI'], "&graine="));
+		} else {
+			$uri = $_SERVER['REQUEST_URI'];
+		}
+		print "<center><span style='font-size: 30pt'>Graine&nbsp;: <a href='$uri&graine=$graine' style='font-family: courier; font-size: 30pt'>$graine</span></span><br><a href='$uri' style='font-size: 50pt'>⟳</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?' style='font-size: 50pt'>⌫</a></table>";
 	}
 	
 }
