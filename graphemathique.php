@@ -475,7 +475,7 @@ if (!isset($_GET["ok"])) {
 		array (
 			"schema" => "<li>son chiffre des unités&nbsp;!\n", // <-- ça, c'est pour la partie "graphème"
 			"prerequis" => [
-				"dec", // Écriture décimale
+				// "dec", // Écriture décimale
 				// "frac", // Fractions
 				// "sci", // Écriture scientifique
 				// "pc", // Pourcentage
@@ -486,7 +486,7 @@ if (!isset($_GET["ok"])) {
 		array (
 			"schema" => "<li>son chiffre des dizaines&nbsp;!\n",
 			"prerequis" => [
-				"dec", // Écriture décimale
+				// "dec", // Écriture décimale
 				// "frac", // Fractions
 				// "sci", // Écriture scientifique
 				// "pc", // Pourcentage
@@ -497,7 +497,7 @@ if (!isset($_GET["ok"])) {
 		array (
 			"schema" => "<li>son chiffre des centaines&nbsp;!\n",
 			"prerequis" => [
-				"dec", // Écriture décimale
+				// "dec", // Écriture décimale
 				// "frac", // Fractions
 				// "sci", // Écriture scientifique
 				// "pc", // Pourcentage
@@ -508,7 +508,7 @@ if (!isset($_GET["ok"])) {
 		array (
 			"schema" => "<li>son chiffre des dixièmes&nbsp;!\n",
 			"prerequis" => [
-				"dec", // Écriture décimale
+				// "dec", // Écriture décimale
 				// "frac", // Fractions
 				// "sci", // Écriture scientifique
 				// "pc", // Pourcentage
@@ -519,7 +519,7 @@ if (!isset($_GET["ok"])) {
 		array (
 			"schema" => "<li>son chiffre des centièmes&nbsp;!\n",
 			"prerequis" => [
-				"dec", // Écriture décimale
+				// "dec", // Écriture décimale
 				// "frac", // Fractions
 				// "sci", // Écriture scientifique
 				// "pc", // Pourcentage
@@ -530,7 +530,7 @@ if (!isset($_GET["ok"])) {
 		array (
 			"schema" => "<li>son chiffre des millièmes&nbsp;!\n",
 			"prerequis" => [
-				"dec", // Écriture décimale
+				// "dec", // Écriture décimale
 				// "frac", // Fractions
 				// "sci", // Écriture scientifique
 				// "pc", // Pourcentage
@@ -541,7 +541,7 @@ if (!isset($_GET["ok"])) {
 		array (
 			"schema" => "<li>une écriture décimale&nbsp;!\n", // <-- et à partir de là, c'est surtout la partie "système d'écriture"
 			"prerequis" => [
-				"dec", // Écriture décimale
+				// "dec", // Écriture décimale
 				// "frac", // Fractions
 				// "sci", // Écriture scientifique
 				// "pc", // Pourcentage
@@ -553,7 +553,7 @@ if (!isset($_GET["ok"])) {
 		array (
 			"schema" => "<li>une écriture décimale, avec au moins ".rand(2,5)." chiffres après la virgule&nbsp;!\n",
 			"prerequis" => [
-				"dec", // Écriture décimale
+				// "dec", // Écriture décimale
 				// "frac", // Fractions
 				// "sci", // Écriture scientifique
 				// "pc", // Pourcentage
