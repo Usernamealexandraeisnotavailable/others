@@ -2,9 +2,11 @@
 <?php
 foreach ($_GET as $i => $v) {
 	$_GET[$i] = str_replace(["\"","<",">"],["&quot;","&lt;","&gt;"],$v);
-	// petite sécurité lol
+	// petite sécurité !
 }
 ?>
+<meta name="description" content="Un casse-têtes qui mêle maths et écriture&nbsp;!">
+<!-- Le jeu utilise la génération procédurale&nbsp;: Chaque "partie" est générée aléatoirement, il n'y a pas une banque d'exercices définie -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -423,7 +425,8 @@ if (!isset($_GET["ok"])) {
 <small style="font-family: Times New Roman"><br><b>Graphématique.</b> <i>n.f.</i> Étude linguistique des<br>systèmes d'écriture et de leurs composantes<br>de base, i.e. les graphèmes.<br><br></small></small></small>
 </center>
 <small><small><a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.php" target="_blank">code source</a></small></small><br>
-<b style="color: rgb(255, 0, 127)">Nombre de questions (max.)&nbsp;:</b> <input type="number" name="seuil_max" min="1" max="5" required style="font-size: 25pt; text-align: center" value=""><br> <!-- l'attribut required permet de faire en sorte que l'utilisateur doive lui-même saisir le nombre de questions à générer -->
+<b style="color: rgb(255, 0, 127)">Nombre de questions (max.)&nbsp;:</b> <input type="number" name="seuil_max" min="1" max="5" required style="font-size: 25pt; text-align: center" value=""><br>
+<!-- L'attribut required permet de faire en sorte que l'utilisateur doive lui-même saisir le nombre de questions à générer. (Maximum 5 pour éviter d'en avoir trop à chaque partie.) -->
 <label><input type="checkbox" name="dec"> Écriture décimale</label><br>
 <label><input type="checkbox" name="frac"> Fractions</label><br>
 <label><input type="checkbox" name="sci"> Écriture scientifique</label><br>
@@ -436,6 +439,7 @@ if (!isset($_GET["ok"])) {
 <input type="submit" name="ok" value="OK" style="font-size: 30pt; width: 100%">
 </table>
 </form>
+<!-- Globalement, ce formulaire est fait pour pousser l'utilisateur à choisir les options qu'il veut, et le nombre de questions à générer. -->
 
 <?php
 } else {
