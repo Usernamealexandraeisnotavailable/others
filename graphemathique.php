@@ -585,17 +585,6 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			]
 		),
 		array (
-			"schema" => "<li>son chiffre des millièmes&nbsp;!\n",
-			"prerequis" => [
-				// "dec", // Écriture décimale
-				// "frac", // Fractions
-				// "sci", // Écriture scientifique
-				// "pc", // Pourcentage
-				// "rel", // Relatifs
-				"nonent", // Non-entières
-			]
-		),
-		array (
 			"schema" => "<li>une écriture décimale&nbsp;!\n", // <-- et à partir de là, c'est surtout la partie "système d'écriture"
 			"prerequis" => [
 				// "dec", // Écriture décimale
