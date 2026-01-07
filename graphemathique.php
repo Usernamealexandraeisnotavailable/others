@@ -4,9 +4,15 @@ foreach ($_GET as $i => $v) {
 	$_GET[$i] = str_replace(['"',"'",'<','>'],['&quot;','’','&lt;','&gt;'],$v);
 	// petite sécurité !
 }
+if (isset($_GET["graine"]))
+	srand(intval($_GET["graine"]));
+else {
+	$graine = rand(1,1000000);
+	srand($graine);
+}
 ?>
 <meta name="description" content="Un casse-têtes qui mêle maths et écriture&nbsp;!">
-<!-- Le jeu utilise la génération procédurale&nbsp;: Chaque "partie" est générée aléatoirement, il n'y a pas une banque d'exercices définie -->
+<!-- Le jeu utilise la génération procédurale : Chaque "partie" est générée aléatoirement, il n'y a pas de banque d'exercices prédéfinie. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
