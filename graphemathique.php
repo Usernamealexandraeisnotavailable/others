@@ -120,12 +120,13 @@ function denom_alea () {
         $fini = 1-rand(0,1)*rand(0,1); // proba 3/4
     }
     return $retour_int;
-	// les seuls facteurs premiers sont 2, 3 et 5, et 9 n'en est jamais un facteur
+	// les seuls facteurs premiers sont 2 et 5, pour s'assurer d'avoir des nombres décimaux
 }
 function entfrac_alea () {
 	$multi = 1;
 	if (rand(0,1)*rand(0,1)) // proba 1/4
 		$multi = 3;
+	// ça permet d'avoir des fois des dénominateurs multiples de 3
 	$denom = denom_alea()*$multi;
     return "\\frac{".espacements_en_trois(strval(intval(short_ent_alea())*$denom*$multi))."}{".espacements_en_trois(strval($denom*$multi))."}";
 }
@@ -145,6 +146,7 @@ function frac_alea () {
 	$multi = 1;
 	if (rand(0,1)*rand(0,1)) // proba 1/4
 		$multi = 3;
+	// ça permet d'avoir des fois des dénominateurs multiples de 3
     return "\\frac{".espacements_en_trois(strval(intval(str_replace("\\,","",ent_alea()))*$multi))."}{".espacements_en_trois(strval(denom_alea()*$multi))."}";
 }
 $fonctions[count($fonctions)] = array (
