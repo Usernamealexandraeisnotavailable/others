@@ -205,7 +205,7 @@ $fonctions[count($fonctions)] = array (
 );
 $ecriture['entsci_alea'] = "sci";
 function entrelsci_alea () {
-    return rel_alea().rand(1,9)."\\times10^{".rel_alea().rand(1,9)."}";
+    return rel_alea().rand(1,9)."\\times10^{".rand(1,9)."}";
 }
 $fonctions[count($fonctions)] = array (
 	"nom" => 'entrelsci_alea',
