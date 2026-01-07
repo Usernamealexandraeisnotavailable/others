@@ -455,27 +455,6 @@ if (!isset($_GET["ok"])) {
 	
 	// QUESTIONS
 	
-	if (isset($_GET["nonent"]))
-	$specifiques = array (
-		"dec" => [
-			"<li>un arrondi à l'unité près&nbsp;!",
-			"<li>un arrondi au dixième près&nbsp;!",
-			"<li>un arrondi au centième près&nbsp;!"
-		],
-		"frac" => [
-			"<li>son numérateur&nbsp;!",
-			"<li>son dénominateur&nbsp;!",
-			"<li>une écriture sous forme de fraction irréductible&nbsp;!"
-		],
-		"sci" => [
-			"<li>son ordre de grandeur&nbsp;!",
-			"<li>son exposant&nbsp;!",
-			"<li>son nombre de chiffres significatifs&nbsp;!"
-		],
-		"pc" => [],
-		"dfp" => []
-	);
-	else
 	$specifiques = array (
 		"dec" => [],
 		"frac" => [
@@ -508,6 +487,50 @@ if (!isset($_GET["ok"])) {
 			"schema" => "<li>son chiffre des dizaines&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
+				// "frac", // Fractions
+				// "sci", // Écriture scientifique
+				// "pc", // Pourcentage
+				// "rel", // Relatifs
+				// "nonent", // Non-entières
+			]
+		),
+		array (
+			"schema" => "<li>son chiffre des centaines&nbsp;!\n",
+			"prerequis" => [
+				// "dec", // Écriture décimale
+				// "frac", // Fractions
+				// "sci", // Écriture scientifique
+				// "pc", // Pourcentage
+				// "rel", // Relatifs
+				// "nonent", // Non-entières
+			]
+		),
+		array (
+			"schema" => "<li>son chiffre des dixièmes&nbsp;!\n", // <-- ça, c'est pour la partie graphème
+			"prerequis" => [
+				"dec", // Écriture décimale
+				// "frac", // Fractions
+				// "sci", // Écriture scientifique
+				// "pc", // Pourcentage
+				// "rel", // Relatifs
+				// "nonent", // Non-entières
+			]
+		),
+		array (
+			"schema" => "<li>son chiffre des centièmes&nbsp;!\n", // <-- ça aussi
+			"prerequis" => [
+				"dec", // Écriture décimale
+				// "frac", // Fractions
+				// "sci", // Écriture scientifique
+				// "pc", // Pourcentage
+				// "rel", // Relatifs
+				// "nonent", // Non-entières
+			]
+		),
+		array (
+			"schema" => "<li>son chiffre des millièmes&nbsp;!\n", // <-- et ça aussi
+			"prerequis" => [
+				"dec", // Écriture décimale
 				// "frac", // Fractions
 				// "sci", // Écriture scientifique
 				// "pc", // Pourcentage
