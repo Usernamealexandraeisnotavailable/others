@@ -5,11 +5,10 @@ foreach ($_GET as $i => $v) {
 	// petite sécurité !
 }
 if (isset($_GET["graine"]))
-	srand(intval($_GET["graine"]));
-else {
+	$graine = intval($_GET["graine"]);
+else
 	$graine = rand(1,1000000);
-	srand($graine);
-}
+srand($graine);
 ?>
 <meta name="description" content="Un casse-têtes qui mêle maths et écriture&nbsp;!">
 <!-- Le jeu utilise la génération procédurale : Chaque "partie" est générée aléatoirement, il n'y a pas de banque d'exercices prédéfinie. -->
@@ -704,7 +703,7 @@ if (!isset($_GET["ok"])) {
 			if ($nombre_restants == 0)
 				break;
 		}
-		print "<center><a href='' style='font-size: 50pt'>⟳</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?' style='font-size: 50pt'>⌫</a></table>";
+		print "<center><span style='font-size: 30pt'>Graine&nbsp;: <a href='".$_SERVER['REQUEST_URI']."&graine=$graine' style='font-family: courier; font-size: 30pt'>$graine</span></span><br><a href='' style='font-size: 50pt'>⟳</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?' style='font-size: 50pt'>⌫</a></table>";
 	}
 	
 }
