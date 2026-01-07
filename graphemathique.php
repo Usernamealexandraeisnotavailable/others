@@ -436,15 +436,15 @@ if (!isset($_GET["ok"])) {
 <small><small><a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.php" target="_blank">code source</a></small></small><br>
 <b style="color: rgb(255, 0, 127)">Nombre de questions (max.)&nbsp;:</b> <input type="number" name="seuil_max" min="1" max="5" required style="font-size: 25pt; text-align: center" value=""><br>
 <!-- L'attribut required permet de faire en sorte que l'utilisateur doive lui-même saisir le nombre de questions à générer. (Maximum 5 pour éviter d'en avoir trop à chaque partie.) -->
+<label><input type="checkbox" name="rel"<?php if (rand(0,10) != 0) { ?> checked <?php } ?>> Relatifs</label><br>
+<label><input type="checkbox" name="nonent"<?php if (rand(0,10) != 0) { ?> checked <?php } ?>> Valeurs non-entières</label><br>
+<!-- Ces options-ci ne permettent pas de générer des questions à elles seules, donc le fait qu'elles soient cochées automatiquement la plupart du temps (aléatoirement) permet de montrer qu'il s'agit de cases à cocher. -->
 <label><input type="checkbox" name="dec"> Écriture décimale</label><br>
 <label><input type="checkbox" name="frac"> Fractions</label><br>
 <label><input type="checkbox" name="sci"> Écriture scientifique</label><br>
 <label><input type="checkbox" name="pc"> Pourcentage</label><br>
 <label><input type="checkbox" name="dfp"> Décomposition en facteurs premiers</label><br>
 <!-- Ces options ne sont pas cochées, pour faire en sorte qu'il y ait plus de chance qu'aucune des options ci-dessus ne soient cochées, résultant en un "Options incomplètes, veuillez cocher d'autres options&nbsp;!" -->
-<label><input type="checkbox" name="rel"<?php if (rand(0,10) != 0) { ?> checked <?php } ?>> Relatifs</label><br>
-<label><input type="checkbox" name="nonent"<?php if (rand(0,10) != 0) { ?> checked <?php } ?>> Valeurs non-entières</label><br>
-<!-- Ces options-ci ne permettent pas de générer des questions à elles seules, donc le fait qu'elles soient cochées automatiquement la plupart du temps (aléatoirement) permet de montrer qu'il s'agit de cases à cocher. -->
 <input type="submit" name="ok" value="OK" style="font-size: 30pt; width: 100%">
 </table>
 </form>
