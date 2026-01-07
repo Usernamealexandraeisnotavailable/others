@@ -1,7 +1,7 @@
 <title>Graphémathique</title>
 <?php
 foreach ($_GET as $i => $v) {
-	$_GET[$i] = str_replace(["\"","<",">"],["&quot;","&lt;","&gt;"],$v);
+	$_GET[$i] = str_replace(['"',"'",'<','>'],['&quot;','’','&lt;','&gt;'],$v);
 	// petite sécurité !
 }
 ?>
