@@ -423,6 +423,56 @@ $fonctions[count($fonctions)] = array (
 );
 $ecriture['dfprel_alea'] = "dfp";
 
+// binaire
+
+function bin_alea () {
+    $fini = false;
+    $retour = '1';
+    while (!$fini) {
+        $retour .= strval(rand(0,1));
+        $fini = rand(0,1)*rand(0,1); // proba 1/4
+    }
+	// loi géométrique de paramètre 1/4 sur la longueur de l'entier généré
+    return "\\tt b\\,".espacements_en_trois($retour)."";
+}
+$fonctions[count($fonctions)] = array (
+	"nom" => 'bin_alea',
+	"prerequis" => [
+		"dec", // Écriture décimale
+		// "frac", // Fractions
+		// "sci", // Écriture scientifique
+		// "pc", // Pourcentage
+		// "rel", // Relatifs
+		// "nonent", // Non-entières
+		"bin" // Binaire
+	]
+);
+$ecriture['bin_alea'] = "bin";
+
+function binrel_alea () {
+    $fini = false;
+    $retour = '1';
+    while (!$fini) {
+        $retour .= strval(rand(0,1));
+        $fini = rand(0,1)*rand(0,1); // proba 1/4
+    }
+	// loi géométrique de paramètre 1/4 sur la longueur de l'entier généré
+    return "\\tt ".rel_alea()."b\\,".espacements_en_trois($retour)."";
+}
+$fonctions[count($fonctions)] = array (
+	"nom" => 'binrel_alea',
+	"prerequis" => [
+		"dec", // Écriture décimale
+		// "frac", // Fractions
+		// "sci", // Écriture scientifique
+		// "pc", // Pourcentage
+		"rel", // Relatifs
+		// "nonent", // Non-entières
+		"bin" // Binaire
+	]
+);
+$ecriture['binrel_alea'] = "bin";
+
 // MENU
 
 if (!isset($_GET["seuil_max"])) {
@@ -447,6 +497,7 @@ if (!isset($_GET["seuil_max"])) {
 <label><input type="checkbox" name="sci"> Écriture scientifique</label><br>
 <label><input type="checkbox" name="pc"> Pourcentage</label><br>
 <label><input type="checkbox" name="dfp"> Décomposition en facteurs premiers</label><br>
+<label><input type="checkbox" name="bin"> Binaire</label><br>
 <!-- Ces options ne sont pas cochées, pour faire en sorte qu'il y ait plus de chance qu'aucune des options ci-dessus ne soient cochées, résultant en un "Options incomplètes, veuillez cocher d'autres options&nbsp;!" -->
 Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="font-size: 25pt; text-align: center; font-family: Courier" placeholder="<?=$graine;?>"><br>
 <!-- Permet de mettre une graine -->
@@ -473,7 +524,10 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"<li>son nombre de chiffres significatifs&nbsp;!"
 		],
 		"pc" => [],
-		"dfp" => []
+		"dfp" => [],
+		"bin" => [
+			"<li>son écriture en base dix&nbsp;!"
+		]
 	);
 	
 	$conversions = array (
@@ -677,6 +731,13 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 				// "rel", // Relatifs
 				// "nonent", // Non-entières
 			]
+		),
+		array (
+			"schema" => "<li>une écriture avec une fraction de nombres binaires&nbsp;!",
+			"prerequis" => [
+				"frac",
+				"bin"
+			]
 		)
 	);
 	
@@ -732,8 +793,11 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			$questions[count($questions)] = $specifique."\n";
 		foreach (conversions_utilisables($ecriture[$fun]) as $conversion)
 			$questions[count($questions)] = $conversion."\n";
-		if (isset($_GET["dfp"]) and in_array($fun, ['ent_alea','entfrac_alea','entpc_alea','entsci_alea','entrel_alea','entrelfrac_alea','entrelpc_alea','entrelsci_alea'])) {
+		if (isset($_GET["dfp"]) and in_array($fun, ['ent_alea','entfrac_alea','entpc_alea','entsci_alea','entrel_alea','entrelfrac_alea','entrelpc_alea','entrelsci_alea','bin_alea'])) {
 			$questions[count($questions)] = "<li>ses facteurs premiers entre 2 inclu et 5 inclu&nbsp;!";
+		}
+		if (isset($_GET["bin"]) and in_array($fun, ['ent_alea','entfrac_alea','entpc_alea','entsci_alea','entrel_alea','entrelfrac_alea','entrelpc_alea','entrelsci_alea','bin_alea'])) { // un nombre décimal ne peut pas toujours être écrit comme une fraction dyadique
+			$questions[count($questions)] = "<li>son écriture en binaire&nbsp;!";
 		}
 		shuffle ($questions);
 		$nombre_restants = intval($_GET["seuil_max"]);
