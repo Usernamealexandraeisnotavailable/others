@@ -554,7 +554,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"redondance" => "dec"
 		),
 		array (
-			"schema" => "<li>une écriture décimale, avec au moins ".rand(2,5)." chiffres après la virgule&nbsp;!\n",
+			"schema" => "<li>une écriture décimale, avec au moins ".rand(2,5)." chiffres après le séparateur décimal&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
