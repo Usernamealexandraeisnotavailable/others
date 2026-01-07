@@ -666,7 +666,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 				"rel", // Relatifs
 				// "nonent", // Non-entières
 			]
-		)/*,
+		),
 		array (
 			"schema" => "<li>une écriture avec aussi peu de symboles que possible&nbsp;!\n",
 			"prerequis" => [
@@ -677,7 +677,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 				// "rel", // Relatifs
 				// "nonent", // Non-entières
 			]
-		)*/
+		)
 	);
 	
 	// JEU
