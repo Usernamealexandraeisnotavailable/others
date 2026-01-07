@@ -684,8 +684,8 @@ if (!isset($_GET["ok"])) {
 	$utilisables = fonctions_utilisables();
 	
 	if (count($utilisables) == 0) {
-		print "<i style='font-size: 30pt'>Options incomplètes, veuillez cocher d'autres options&nbsp;!</i><br><i style='font-size: 15pt'>Veuillez patienter 3 secondes, on vous redirige sur le menu...</i>";
-		print "<meta http-equiv='refresh' content='3; ?'>";
+		print "<i style='font-size: 30pt'>Options incomplètes, veuillez cocher d'autres options&nbsp;!</i><br><i style='font-size: 15pt'>Veuillez patienter 5 secondes, on vous redirige sur le menu...</i>";
+		print "<meta http-equiv='refresh' content='5; ?'>";
 	} else {
 		$fun = $utilisables[rand(0,count($utilisables)-1)];
 		print "<span style='font-size: 50pt'><br></span>\n<span style='color: white'>";
