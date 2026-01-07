@@ -446,7 +446,7 @@ if (!isset($_GET["seuil_max"])) {
 <label><input type="checkbox" name="pc"> Pourcentage</label><br>
 <label><input type="checkbox" name="dfp"> Décomposition en facteurs premiers</label><br>
 <!-- Ces options ne sont pas cochées, pour faire en sorte qu'il y ait plus de chance qu'aucune des options ci-dessus ne soient cochées, résultant en un "Options incomplètes, veuillez cocher d'autres options&nbsp;!" -->
-Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="font-size: 25pt; text-align: center; font-family: Courier" placeholder="1000000"><br>
+Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="font-size: 25pt; text-align: center; font-family: Courier" placeholder="<?=$graine;?>"><br>
 <!-- Permet de mettre une graine -->
 <input type="submit" name="ok" value="OK" style="font-size: 30pt; width: 100%">
 </table>
