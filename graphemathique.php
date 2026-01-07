@@ -684,7 +684,7 @@ if (!isset($_GET["ok"])) {
 		print "<meta http-equiv='refresh' content='3; ?'>";
 	} else {
 		$fun = $utilisables[rand(0,count($utilisables)-1)];
-		print "<br>\n<span style='color: white'>";
+		print "<span style='font-size: 50pt'><br></span>\n<span style='color: white'>";
 		print "\\(\\color{black}\\sf".$fun()."\\)";
 		print "</span><table><tr><td><ul style='font-size: 20pt'><br><br>Trouvez-lui...<br>";
 		$questions = [];
