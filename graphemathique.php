@@ -4,10 +4,11 @@ foreach ($_GET as $i => $v) {
 	$_GET[$i] = str_replace(['"',"'",'<','>'],['&quot;','’','&lt;','&gt;'],$v);
 	// petite sécurité !
 }
-if (isset($_GET["graine"]))
-	$graine = intval($_GET["graine"]);
-else
-	$graine = rand(1,1000000);
+if (isset($_GET["graine"])) {
+	if (intval($_GET["graine"]) == 0)
+		$graine = rand(1,1000000);
+	else $graine = intval($_GET["graine"]);
+} else $graine = rand(1,1000000);
 srand($graine);
 ?>
 <meta name="description" content="Un casse-têtes qui mêle maths et écriture&nbsp;!">
@@ -422,7 +423,7 @@ $ecriture['dfprel_alea'] = "dfp";
 
 // MENU
 
-if (!isset($_GET["ok"])) {
+if (!isset($_GET["seuil_max"])) {
 
 ?>
 
@@ -445,6 +446,8 @@ if (!isset($_GET["ok"])) {
 <label><input type="checkbox" name="pc"> Pourcentage</label><br>
 <label><input type="checkbox" name="dfp"> Décomposition en facteurs premiers</label><br>
 <!-- Ces options ne sont pas cochées, pour faire en sorte qu'il y ait plus de chance qu'aucune des options ci-dessus ne soient cochées, résultant en un "Options incomplètes, veuillez cocher d'autres options&nbsp;!" -->
+Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="font-size: 25pt; text-align: center; font-family: Courier" placeholder="1000000"><br>
+<!-- Permet de mettre une graine -->
 <input type="submit" name="ok" value="OK" style="font-size: 30pt; width: 100%">
 </table>
 </form>
