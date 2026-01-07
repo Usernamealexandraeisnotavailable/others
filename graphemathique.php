@@ -86,7 +86,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		"dec", // Écriture décimale
 		// "frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
 		// "nonent", // Non-entières
@@ -135,7 +135,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		"frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
 		// "nonent", // Non-entières
@@ -154,7 +154,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		"frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
 		"nonent", // Non-entières
@@ -180,7 +180,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		"dec", // Écriture décimale
 		// "frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
 		"nonent", // Non-entières
@@ -189,7 +189,7 @@ $fonctions[count($fonctions)] = array (
 $ecriture['dec_alea'] = "dec";
 
 // ÉCRITURE SCIENTIFIQUE
-// chiffres significatifs : nombre de chiffres apparents dans une écriture scientifique du nombre
+// chiffres significatifs : nombre de chiffres apparents dans une notation scientifique du nombre
 
 function entsci_alea () {
     return rand(1,9)."\\times10^{".rand(0,9)."}";
@@ -199,7 +199,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		// "frac", // Fractions
-		"sci", // Écriture scientifique
+		"sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
 		// "nonent", // Non-entières
@@ -214,7 +214,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		// "frac", // Fractions
-		"sci", // Écriture scientifique
+		"sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
 		// "nonent", // Non-entières
@@ -229,7 +229,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		// "frac", // Fractions
-		"sci", // Écriture scientifique
+		"sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
 		"nonent", // Non-entières
@@ -244,7 +244,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		// "frac", // Fractions
-		"sci", // Écriture scientifique
+		"sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
 		"nonent", // Non-entières
@@ -262,7 +262,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		"dec", // Écriture décimale
 		// "frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
 		// "nonent", // Non-entières
@@ -277,7 +277,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		"dec", // Écriture décimale
 		// "frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
 		"nonent", // Non-entières
@@ -292,7 +292,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		"frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
 		"nonent", // Non-entières
@@ -307,7 +307,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		"frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
 		// "nonent", // Non-entières
@@ -322,7 +322,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		// "frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		"pc", // Pourcentage
 		// "rel", // Relatifs
 		// "nonent", // Non-entières
@@ -337,7 +337,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		// "frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		"pc", // Pourcentage
 		"rel", // Relatifs
 		// "nonent", // Non-entières
@@ -352,7 +352,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		// "frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		"pc", // Pourcentage
 		// "rel", // Relatifs
 		"nonent", // Non-entières
@@ -367,7 +367,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		// "frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		"pc", // Pourcentage
 		"rel", // Relatifs
 		"nonent", // Non-entières
@@ -398,7 +398,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		// "frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
 		// "nonent", // Non-entières
@@ -414,7 +414,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		// "dec", // Écriture décimale
 		// "frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
 		// "nonent", // Non-entières
@@ -440,7 +440,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		"dec", // Écriture décimale
 		// "frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
 		// "nonent", // Non-entières
@@ -464,7 +464,7 @@ $fonctions[count($fonctions)] = array (
 	"prerequis" => [
 		"dec", // Écriture décimale
 		// "frac", // Fractions
-		// "sci", // Écriture scientifique
+		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
 		// "nonent", // Non-entières
@@ -494,7 +494,7 @@ if (!isset($_GET["seuil_max"])) {
 <!-- Ces options-ci ne permettent pas de générer des questions à elles seules, donc le fait qu'elles soient cochées automatiquement la plupart du temps (aléatoirement) permet de montrer qu'il s'agit de cases à cocher. -->
 <label><input type="checkbox" name="dec"> Écriture décimale</label><br>
 <label><input type="checkbox" name="frac"> Fractions</label><br>
-<label><input type="checkbox" name="sci"> Écriture scientifique</label><br>
+<label><input type="checkbox" name="sci"> Notation scientifique</label><br>
 <label><input type="checkbox" name="pc"> Pourcentage</label><br>
 <label><input type="checkbox" name="dfp"> Décomposition en facteurs premiers</label><br>
 <label><input type="checkbox" name="bin"> Binaire</label><br>
@@ -534,7 +534,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
 				// "nonent", // Non-entières
@@ -545,7 +545,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
 				// "nonent", // Non-entières
@@ -556,7 +556,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
 				// "nonent", // Non-entières
@@ -567,7 +567,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
 				"nonent", // Non-entières
@@ -578,7 +578,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
 				"nonent", // Non-entières
@@ -589,7 +589,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
 				// "nonent", // Non-entières
@@ -601,7 +601,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
 				"nonent", // Non-entières /* techniquement ça resterait des entiers, mais les virgules ne sont pas vus avant */
@@ -612,7 +612,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				"frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
 				// "nonent", // Non-entières
@@ -623,7 +623,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				"frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
 				// "nonent", // Non-entières
@@ -634,7 +634,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				"frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				"rel", // Relatifs
 				// "nonent", // Non-entières
@@ -645,7 +645,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				"frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				"rel", // Relatifs
 				// "nonent", // Non-entières
@@ -656,18 +656,18 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				"frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
 				// "nonent", // Non-entières
 			]
 		),
 		array (
-			"schema" => "<li>une écriture scientifique&nbsp;!\n",
+			"schema" => "<li>une notation scientifique&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
-				"sci", // Écriture scientifique
+				"sci", // Notation scientifique
 				// "pc", // Pourcentage
 				"rel", // Relatifs /* ça risque de demander des magnitudes négatives */
 				"nonent", // Non-entières /* en général ça risque de demander des nombres non-entiers */
@@ -675,11 +675,11 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"redondance" => "sci"
 		),
 		array (
-			"schema" => "<li>une écriture scientifique, avec au moins ".rand(2,5)." chiffres significatifs&nbsp;!\n",
+			"schema" => "<li>une notation scientifique, avec au moins ".rand(2,5)." chiffres significatifs&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
-				"sci", // Écriture scientifique
+				"sci", // Notation scientifique
 				// "pc", // Pourcentage
 				"rel", // Relatifs /* ça risque de demander des magnitudes négatives */
 				"nonent", // Non-entières /* en général ça risque de demander des nombres non-entiers, ou avec virgule explicite */
@@ -690,7 +690,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				"pc", // Pourcentage
 				// "rel", // Relatifs
 				// "nonent", // Non-entières
@@ -702,7 +702,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				"rel", // Relatifs
 				// "nonent", // Non-entières
@@ -713,7 +713,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Fractions
-				// "sci", // Écriture scientifique
+				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
 				// "nonent", // Non-entières
