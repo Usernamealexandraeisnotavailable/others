@@ -454,7 +454,7 @@ function bin_alea () {
 $fonctions[count($fonctions)] = array (
 	"nom" => 'bin_alea',
 	"prerequis" => [
-		"dec", // Écriture décimale
+		// "dec", // Écriture décimale
 		// "frac", // Fractions
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
@@ -478,7 +478,7 @@ function binrel_alea () {
 $fonctions[count($fonctions)] = array (
 	"nom" => 'binrel_alea',
 	"prerequis" => [
-		"dec", // Écriture décimale
+		// "dec", // Écriture décimale
 		// "frac", // Fractions
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
