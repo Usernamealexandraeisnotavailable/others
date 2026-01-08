@@ -4,10 +4,12 @@ foreach ($_GET as $i => $v) {
 	$_GET[$i] = str_replace(['"',"'",'<','>'],['&quot;','’','&lt;','&gt;'],$v);
 	// petite sécurité !
 }
+if (isset($_GET["seuil_max"]))
+	$seuil_max = max(1,min(5,intval($_GET["seuil_max"])));
 if (isset($_GET["graine"])) {
 	if (intval($_GET["graine"]) == 0)
 		$graine = rand(1,1000000);
-	else $graine = intval($_GET["graine"]);
+	else $graine = max(1,min(1000000,intval($_GET["graine"])));
 } else $graine = rand(1,1000000);
 srand($graine);
 ?>
@@ -500,7 +502,7 @@ if (!isset($_GET["seuil_max"])) {
 <center style="background-color: grey; color: white">
 <small style="font-family: Times New Roman"><br><b>Graphématique.</b> <i>n.f.</i> Étude linguistique des<br>systèmes d'écriture et de leurs composantes<br>de base, i.e. les graphèmes.<br><br></small></small></small>
 </center>
-<small><small><a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.php" target="_blank">code source</a></small></small><br>
+<small><small><a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.php" target="_blank">code source</a> &bullet; <a href="https://github.com/Usernamealexandraeisnotavailable/others/blob/main/graphemathique.md" target="_blank">méthodes de résolution et de vérification</a></small></small><br>
 <b style="color: rgb(255, 0, 127)">Nombre de questions (max.)&nbsp;:</b> <input type="number" name="seuil_max" min="1" max="5" required style="font-size: 25pt; text-align: center" value=""><br>
 <!-- L'attribut required permet de faire en sorte que l'utilisateur doive lui-même saisir le nombre de questions à générer. (Maximum 5 pour éviter d'en avoir trop à chaque partie.) -->
 <label><input type="checkbox" name="rel"<?php if (rand(0,10) != 0) { ?> checked <?php } ?>> <i style="color: rgb(255,127,127)">Relatifs</i></label><br>
@@ -794,14 +796,14 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			$questions[count($questions)] = $specifique."\n";
 		foreach (conversions_utilisables($ecriture[$fun]) as $conversion)
 			$questions[count($questions)] = $conversion."\n";
-		if (isset($_GET["dfp"]) and in_array($fun, ['ent_alea','entfrac_alea','entpc_alea','entsci_alea','entrel_alea','entrelfrac_alea','entrelpc_alea','entrelsci_alea','bin_alea'])) {
+		if (isset($_GET["dfp"]) and in_array($fun, ['ent_alea','entfrac_alea','entpc_alea','entsci_alea','entrel_alea','entrelfrac_alea','entrelpc_alea','entrelsci_alea','bin_alea','binrel_alea'])) {
 			$questions[count($questions)] = "<li>ses facteurs premiers entre 2 inclu et 5 inclu&nbsp;!";
 		}
-		if (isset($_GET["bin"]) and in_array($fun, ['ent_alea','entfrac_alea','entpc_alea','entsci_alea','entrel_alea','entrelfrac_alea','entrelpc_alea','entrelsci_alea','bin_alea'])) { // un nombre décimal ne peut pas toujours être écrit comme une fraction dyadique
+		if (isset($_GET["bin"]) and in_array($fun, ['ent_alea','entfrac_alea','entpc_alea','entsci_alea','entrel_alea','entrelfrac_alea','entrelpc_alea','entrelsci_alea','bin_alea','binrel_alea'])) { // un nombre décimal ne peut pas toujours être écrit comme une fraction dyadique
 			$questions[count($questions)] = "<li>son écriture en binaire&nbsp;!";
 		}
 		shuffle ($questions);
-		$nombre_restants = intval($_GET["seuil_max"]);
+		$nombre_restants = $seuil_max;
 		foreach ($questions as $question) {
 			print $question;
 			$nombre_restants--;
