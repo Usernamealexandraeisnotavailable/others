@@ -36,9 +36,9 @@
 - Si la mantisse d'une des ses notations scientifiques est strictement inférieure à 5, remplacer cette mantisse par 1 donne un nombre égal au nombre donné. *(Exemple : 3,5×10², la mantisse 3,5 est strictement inférieure à 5, donc toute réponse correcte est égale à 1×10².)*
 - Si la mantisse d'une des ses notations scientifiques est supérieure ou égale à 5, remplacer cette mantisse par 10 donne un nombre égal au nombre donné. *(Exemple : 8,3×10², la mantisse 8,3 est supérieure ou égale à 5, donc toute réponse correcte est égale à 10×10².)*
 
-**Méthode de résolution (exemple) :**
-- D'abord, on le convertit en notation scientifique. Puis, si la mantisse est strictement inférieure à 5, on n'a qu'à extraire la puissance de dix indiquée. *(Exemple : 3,5×10⁻², la mantisse 3,5 est strictement inférieure à 5, donc on peut extraire sa puissance de dix, à savoir 10⁻².)*
-- D'abord, on le convertit en notation scientifique. Puis, si la mantisse est supérieure ou égale à 5, on peut remplacer la mantisse par 10, puis on peut éventuellement l'identité 10×10ⁿ = 10ⁿ⁺¹ pour donner une réponse comme puissance de dix. *(Exemple : -8,3×10², la mantisse 8,3 est supérieure ou égale à 5, donc la réponse est 10×10², qu'on peut aussi noter 10³.)*
+**Méthode de résolution (exemple) :** D'abord, on le convertit en notation scientifique. Puis, 
+- Si la mantisse est strictement inférieure à 5, on n'a qu'à extraire la puissance de dix indiquée. *(Exemple : 3,5×10⁻², la mantisse 3,5 est strictement inférieure à 5, donc on peut extraire sa puissance de dix, à savoir 10⁻².)*
+- Si la mantisse est supérieure ou égale à 5, on peut remplacer la mantisse par 10, puis on peut éventuellement l'identité 10×10ⁿ = 10ⁿ⁺¹ pour donner une réponse comme puissance de dix. *(Exemple : -8,3×10², la mantisse 8,3 est supérieure ou égale à 5, donc la réponse est 10×10², qu'on peut aussi noter 10³.)*
 
 ## son exposant !
 
