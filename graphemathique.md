@@ -98,8 +98,6 @@
 
 **Redondance :** Écriture décimale.
 
-**Vérification :** On peut écrire le nombre donné sur la calculatrice, et vérifier que le nombre est bien la réponse donnée, avec éventuellement quelques zéros en plus après (le dernier chiffre non-nul après le séparateur décimal) ; On n'est jamais à l'abri de chiffres en plus, en moins, ou altérés par rapport à la solution réelle. Pour le cas du binaire, on peut utiliser Python pour trouver son écriture décimale : On préfixe un nombre binaire positif par 0b, et un nombre binaire négatif par -0b, et on le print en l'état. *(Exemple : le nombre binaire -b1101 se trouve en exécutant la ligne print(-0b1101) sur Python, ce qui renvoie bien 13.)*
-
 ## une écriture décimale, avec au moins [entre 2 inclu et 5 inclu] chiffres après le séparateur décimal !
 
 **Pré-requis :** Valeurs non-entières.
