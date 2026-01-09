@@ -809,7 +809,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 		foreach (conversions_utilisables($ecriture[$fun]) as $conversion)
 			$questions[count($questions)] = $conversion."\n";
 		if (isset($_GET["dfp"]) and in_array($fun, ['ent_alea','entfrac_alea','entpc_alea','entsci_alea','entrel_alea','entrelfrac_alea','entrelpc_alea','entrelsci_alea','bin_alea','binrel_alea'])) {
-			$questions[count($questions)] = "<li>ses facteurs premiers entre 2 inclu et 5 inclu&nbsp;!";
+			$questions[count($questions)] = "<li>ses facteurs premiers entre 1 et 6&nbsp;!";
 		}
 		if (isset($_GET["bin"]) and in_array($fun, ['ent_alea','entfrac_alea','entpc_alea','entsci_alea','entrel_alea','entrelfrac_alea','entrelpc_alea','entrelsci_alea','dfp_alea','dfprel_alea'])) { // un nombre décimal ne peut pas toujours être écrit comme une fraction dyadique
 			$questions[count($questions)] = "<li>son écriture en binaire&nbsp;!";
