@@ -60,6 +60,13 @@
 
 **Méthode de résolution (exemple) :** On convertit le nombre en écriture décimale, et on extrait le premier chiffre placé le plus à droite avant le séparateur décimal.
 
+**Erreurs/ambiguïtés envisagées :**
+
+- En notation scientifique, le chiffre des unités de la mantisse, quand l'exposant est non-nul, n'est pas le chiffre des unités du nombre.
+- En pourcentage, il ne s'agit pas du chiffre des unités du nombre en pourcentage, car le pourcentage revient à diviser par cent — Cela vous donnera, en réalité, son chiffre des centièmes.
+- Dans une fraction, il ne s'agit ni du chiffre des unités du numérateur, ni du dénominateur, sauf coïncidence.
+- En binaire, il peut s'agir aussi du chiffre des unités de l'écriture binaire (0 ou 1) ou du chiffre des unités decimal, qui lui nécessite bien de convertir en decimal dans la plupart des cas.
+
 ## son chiffre des dizaines !
 
 **Méthode de résolution (exemple) :** On convertit le nombre en écriture décimale, et on extrait le deuxième chiffre placé le plus à droite avant le séparateur décimal.
