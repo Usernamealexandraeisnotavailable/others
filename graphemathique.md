@@ -129,7 +129,7 @@
 
 **Redondance :** Notation scientifique.
 
-## une notation scientifiques, avec au moins [entre 2 inclu et 5 inclu] chiffres significatifs !
+## une notation scientifique, avec au moins [entre 2 inclu et 5 inclu] chiffres significatifs !
 
 **Pré-requis :** Notation scientifique ; Relatifs ; Valeurs non-entières.
 
@@ -144,6 +144,9 @@
 **Pré-requis :** Relatifs.
 
 **Méthode de résolution (exemple) :** On peut utiliser l'involution de l'opposée, qui est l'identité A = -(-A).
+
+**Erreurs envisagées :**
+- Pour les fractions, -(A/B) n'est pas (-A)/(-B), puisque prendre l'opposé revient à multiplier par -1, donc (-A)/(-B) = ((-1)×A)/((-1)×B) = A/B ≠ -(A/B). On a -(A/B) = (-A)/B et -(A/B) = A/(-B), toutefois.
 
 ## une écriture avec aussi peu de symboles que possible !
 
