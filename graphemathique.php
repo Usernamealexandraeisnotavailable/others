@@ -80,14 +80,14 @@ function ent_alea () {
         $retour .= strval(rand(0,9));
         $fini = rand(0,1); // proba 1/2
     }
-	// loi géométrique de paramètre 1/2 sur la longueur de l'entier généré
+	// loi géométrique de paramètre 1/2 sur la longueur de l'entier généré.
     return espacements_en_trois($retour);
 }
 $fonctions[count($fonctions)] = array (
 	"nom" => 'ent_alea',
 	"prerequis" => [
 		"dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
@@ -102,9 +102,9 @@ function short_ent_alea () {
         $retour .= strval(rand(0,9));
         $fini = 1 - rand(0,1)*rand(0,1); // proba 3/4
     }
-	// loi géométrique de paramètre 1/4 sur la longueur de l'entier généré
+	// loi géométrique de paramètre 1/4 sur la longueur de l'entier généré.
     return $retour;
-	// à noter qu'il n'y a pas d'espacements en trois dans cette fonction-ci
+	// à noter qu'il n'y a pas d'espacements en trois dans cette fonction-ci.
 }
 
 // FRACTIONS
@@ -122,7 +122,7 @@ function denom_alea () {
         $fini = 1-rand(0,1)*rand(0,1); // proba 3/4
     }
     return $retour_int;
-	// les seuls facteurs premiers sont 2 et 5, pour s'assurer d'avoir des nombres décimaux
+	// les seuls facteurs premiers sont 2 et 5, pour s'assurer d'avoir des nombres décimaux.
 }
 function entfrac_alea () {
 	$multi = 1;
@@ -132,12 +132,13 @@ function entfrac_alea () {
 		$multi = 7;
 	$denom = denom_alea()*$multi;
     return "\\frac{".espacements_en_trois(strval(intval(short_ent_alea())*$denom*$multi))."}{".espacements_en_trois(strval($denom*$multi))."}";
+	// le résultat est toujours entier, car le numérateur est un multiple du dénominateur.
 }
 $fonctions[count($fonctions)] = array (
 	"nom" => 'entfrac_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		"frac", // Fractions
+		"frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
@@ -152,13 +153,14 @@ function frac_alea () {
 	elseif (rand(0,1)*rand(0,1)) // proba 1/4
 		$multi = 7;
     return "\\frac{".espacements_en_trois(strval(intval(str_replace("\\,","",ent_alea()))*$multi))."}{".espacements_en_trois(strval(denom_alea()*$multi))."}";
-	// ça permet d'avoir des fois des dénominateurs multiples de 3 xor de 7, tout en gardant un développement décimal fini
+	// ça permet d'avoir de faire en sorte que le dénominateur puisse être multiple de 3 xor de 7, tout en gardant un développement décimal fini, car on multiplie également le numérateur par cette même quantité.
+	// le résultat est donc TOUJOURS décimal !
 }
 $fonctions[count($fonctions)] = array (
 	"nom" => 'frac_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		"frac", // Fractions
+		"frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
@@ -184,7 +186,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'dec_alea',
 	"prerequis" => [
 		"dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
@@ -203,7 +205,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'entsci_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		"sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
@@ -218,7 +220,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'entrelsci_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		"sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
@@ -233,7 +235,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'decsci_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		"sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
@@ -248,7 +250,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'decrelsci_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		"sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
@@ -266,7 +268,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'entrel_alea',
 	"prerequis" => [
 		"dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
@@ -281,7 +283,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'decrel_alea',
 	"prerequis" => [
 		"dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
@@ -301,7 +303,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'relfrac_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		"frac", // Fractions
+		"frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
@@ -322,7 +324,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'entrelfrac_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		"frac", // Fractions
+		"frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
@@ -337,7 +339,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'entpc_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		"pc", // Pourcentage
 		// "rel", // Relatifs
@@ -352,7 +354,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'entrelpc_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		"pc", // Pourcentage
 		"rel", // Relatifs
@@ -367,7 +369,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'decpc_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		"pc", // Pourcentage
 		// "rel", // Relatifs
@@ -382,7 +384,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'decrelpc_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		"pc", // Pourcentage
 		"rel", // Relatifs
@@ -413,7 +415,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'dfp_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
@@ -429,7 +431,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'dfprel_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
@@ -455,7 +457,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'bin_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		// "rel", // Relatifs
@@ -479,7 +481,7 @@ $fonctions[count($fonctions)] = array (
 	"nom" => 'binrel_alea',
 	"prerequis" => [
 		// "dec", // Écriture décimale
-		// "frac", // Fractions
+		// "frac", // Écriture fractionnaire
 		// "sci", // Notation scientifique
 		// "pc", // Pourcentage
 		"rel", // Relatifs
@@ -509,7 +511,7 @@ if (!isset($_GET["seuil_max"])) {
 <label><input type="checkbox" name="nonent"<?php if (rand(0,10) != 0) { ?> checked <?php } ?>> <i style="color: rgb(255,127,127)">Valeurs non-entières</i></label><br>
 <!-- Ces options-ci ne permettent pas de générer des questions à elles seules, donc le fait qu'elles soient cochées automatiquement la plupart du temps (aléatoirement) permet de montrer qu'il s'agit de cases à cocher. -->
 <label><input type="checkbox" name="dec"> Écriture décimale</label><br>
-<label><input type="checkbox" name="frac"> Fractions</label><br>
+<label><input type="checkbox" name="frac"> Écriture fractionnaire</label><br>
 <label><input type="checkbox" name="sci"> Notation scientifique</label><br>
 <label><input type="checkbox" name="pc"> Pourcentage</label><br>
 <label><input type="checkbox" name="dfp"> Décomposition en facteurs premiers</label><br>
@@ -549,7 +551,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>son chiffre des unités&nbsp;!\n", // <-- ça, c'est pour la partie "graphème"
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				// "frac", // Fractions
+				// "frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
@@ -560,7 +562,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>son chiffre des dizaines&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				// "frac", // Fractions
+				// "frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
@@ -571,7 +573,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>son chiffre des centaines&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				// "frac", // Fractions
+				// "frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
@@ -582,7 +584,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>son chiffre des dixièmes&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				// "frac", // Fractions
+				// "frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
@@ -593,7 +595,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>son chiffre des centièmes&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				// "frac", // Fractions
+				// "frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
@@ -604,7 +606,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>une écriture décimale&nbsp;!\n", // <-- et à partir de là, c'est surtout la partie "système d'écriture"
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				// "frac", // Fractions
+				// "frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
@@ -616,7 +618,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>une écriture décimale, avec au moins ".rand(2,5)." chiffres après le séparateur décimal&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				// "frac", // Fractions
+				// "frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
@@ -627,7 +629,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>une écriture comme fraction qui n'est pas une fraction décimale&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				"frac", // Fractions
+				"frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
@@ -638,7 +640,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>une écriture comme fraction décimale&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				"frac", // Fractions
+				"frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
@@ -649,7 +651,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>une écriture comme fraction avec un numérateur négatif&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				"frac", // Fractions
+				"frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				"rel", // Relatifs
@@ -660,7 +662,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>une écriture comme fraction avec un dénominateur négatif&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				"frac", // Fractions
+				"frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				"rel", // Relatifs
@@ -671,7 +673,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>une écriture comme fraction réductible&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				"frac", // Fractions
+				"frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
@@ -682,7 +684,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>une notation scientifique&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				// "frac", // Fractions
+				// "frac", // Écriture fractionnaire
 				"sci", // Notation scientifique
 				// "pc", // Pourcentage
 				"rel", // Relatifs /* ça risque de demander des magnitudes négatives */
@@ -694,7 +696,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>une notation scientifique, avec au moins ".rand(2,5)." chiffres significatifs&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				// "frac", // Fractions
+				// "frac", // Écriture fractionnaire
 				"sci", // Notation scientifique
 				// "pc", // Pourcentage
 				"rel", // Relatifs /* ça risque de demander des magnitudes négatives */
@@ -705,7 +707,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>une écriture en tant que pourcentage&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				// "frac", // Fractions
+				// "frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				"pc", // Pourcentage
 				// "rel", // Relatifs
@@ -717,7 +719,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>une écriture qui commence par un signe moins&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				// "frac", // Fractions
+				// "frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				"rel", // Relatifs
@@ -728,7 +730,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"schema" => "<li>une écriture avec aussi peu de symboles que possible&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
-				// "frac", // Fractions
+				// "frac", // Écriture fractionnaire
 				// "sci", // Notation scientifique
 				// "pc", // Pourcentage
 				// "rel", // Relatifs
