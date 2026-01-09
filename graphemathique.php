@@ -537,7 +537,6 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			"<li>une écriture sous forme de fraction irréductible&nbsp;!"
 		],
 		"sci" => [
-			"<li>son ordre de grandeur&nbsp;!",
 			"<li>son exposant&nbsp;!",
 			"<li>son nombre de chiffres significatifs&nbsp;!"
 		],
@@ -691,6 +690,17 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 				"nonent", // Non-entières /* en général ça risque de demander des nombres non-entiers */
 			],
 			"redondance" => "sci"
+		),
+		array (
+			"schema" => "<li>son ordre de grandeur&nbsp;!",
+			"prerequis" => [
+				// "dec", // Écriture décimale
+				// "frac", // Écriture fractionnaire
+				"sci", // Notation scientifique
+				// "pc", // Pourcentage
+				"rel", // Relatifs /* ça risque de demander des magnitudes négatives */
+				// "nonent", // Non-entières
+			]
 		),
 		array (
 			"schema" => "<li>une notation scientifique, avec au moins ".rand(2,5)." chiffres significatifs&nbsp;!\n",
