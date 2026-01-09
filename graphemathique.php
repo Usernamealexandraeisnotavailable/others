@@ -125,13 +125,8 @@ function denom_alea () {
 	// les seuls facteurs premiers sont 2 et 5, pour s'assurer d'avoir des nombres décimaux.
 }
 function entfrac_alea () {
-	$multi = 1;
-	if (rand(0,1)*rand(0,1)) // proba 1/4
-		$multi = 3;
-	elseif (rand(0,1)*rand(0,1)) // proba 1/4
-		$multi = 7;
-	$denom = denom_alea()*$multi;
-    return "\\frac{".espacements_en_trois(strval(intval(short_ent_alea())*$denom*$multi))."}{".espacements_en_trois(strval($denom*$multi))."}";
+	$denom = intval(short_ent_alea());
+    return "\\frac{".espacements_en_trois(strval(intval(short_ent_alea())*$denom))."}{".espacements_en_trois(strval($denom))."}";
 	// le résultat est toujours entier, car le numérateur est un multiple du dénominateur.
 }
 $fonctions[count($fonctions)] = array (
@@ -312,13 +307,8 @@ $fonctions[count($fonctions)] = array (
 );
 $ecriture['relfrac_alea'] = "frac";
 function entrelfrac_alea () {
-	$multi = 1;
-	if (rand(0,1)*rand(0,1)) // proba 1/4
-		$multi = 3;
-	elseif (rand(0,1)*rand(0,1)) // proba 1/4
-		$multi = 7;
-	$denom = denom_alea()*$multi;
-    return rel_alea()."\\frac{".rel_alea().espacements_en_trois(strval(intval(short_ent_alea())*$denom*$multi))."}{".rel_alea().espacements_en_trois(strval($denom*$multi))."}";
+	$denom = intval(short_ent_alea());
+    return rel_alea()."\\frac{".rel_alea().espacements_en_trois(strval(intval(short_ent_alea())*$denom))."}{".rel_alea().espacements_en_trois(strval($denom))."}";
 }
 $fonctions[count($fonctions)] = array (
 	"nom" => 'entrelfrac_alea',
