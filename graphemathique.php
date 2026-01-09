@@ -511,9 +511,9 @@ if (!isset($_GET["seuil_max"])) {
 <label><input type="checkbox" name="nonent"<?php if (rand(0,10) != 0) { ?> checked <?php } ?>> <i style="color: rgb(255,127,127)">Valeurs non-entières</i></label><br>
 <!-- Ces options-ci ne permettent pas de générer des questions à elles seules, donc le fait qu'elles soient cochées automatiquement la plupart du temps (aléatoirement) permet de montrer qu'il s'agit de cases à cocher. -->
 <label><input type="checkbox" name="dec"> Écriture décimale</label><br>
+<label><input type="checkbox" name="pc"> Pourcentage</label><br>
 <label><input type="checkbox" name="frac"> Écriture fractionnaire</label><br>
 <label><input type="checkbox" name="sci"> Notation scientifique</label><br>
-<label><input type="checkbox" name="pc"> Pourcentage</label><br>
 <label><input type="checkbox" name="dfp"> Décomposition en facteurs premiers</label><br>
 <label><input type="checkbox" name="bin"> Binaire</label><br>
 <!-- Ces options ne sont pas cochées, pour faire en sorte qu'il y ait plus de chance qu'aucune des options ci-dessus ne soient cochées, résultant en un "Options incomplètes, veuillez cocher d'autres options&nbsp;!" -->
