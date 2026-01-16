@@ -77,6 +77,7 @@
 - En pourcentage, il ne s'agit pas du chiffre des dizaines du nombre en pourcentage, car le pourcentage revient à diviser par cent — Cela vous donnera, en réalité, son chiffre des dixièmes.
 - Dans une fraction, il ne s'agit ni du chiffre des dizaines du numérateur, ni du dénominateur, sauf coïncidence.
 - En binaire, le chiffre des dizaines n'est pas à confondre avec le chiffre de [deuxaines](https://fr.wiktionary.org/wiki/deuxaine).
+- Confondre avec le chiffre des dixièmes. 
 
 ## son chiffre des centaines !
 
