@@ -529,6 +529,26 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 	
 	// QUESTIONS
 	
+	function instructions_moins_symboles () {
+		$options = ["de chiffres", "de signes", "de séparateurs décimaux", "de barres de fraction", "d'opérations de puissances"];
+		shuffle($options);
+		$reduites = [];
+		$au_moins_un = false;
+		foreach ($options as $option) {
+			if (rand(0,1) or !$au_moins_un) {
+				$reduites[count($reduites)] = $option;
+				$au_moins_un = true;
+			}
+		}
+		if (count($reduites) == 1) {
+			return $reduites[0];
+		} else {
+			$reduites[count($reduites)-2] = $reduites[count($reduites)-2]." et ".$reduites[count($reduites)-1];
+			array_pop($reduites);
+			return implode(", ", $reduites);
+		}
+	}
+	
 	$specifiques = array (
 		"dec" => [],
 		"frac" => [
@@ -737,7 +757,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 			]
 		),
 		array (
-			"schema" => "<li>une écriture avec aussi peu de symboles que possible&nbsp;!\n",
+			"schema" => "<li>une écriture qui aurait aussi peu ".instructions_moins_symboles()." que possible&nbsp;!\n",
 			"prerequis" => [
 				// "dec", // Écriture décimale
 				// "frac", // Écriture fractionnaire
@@ -802,7 +822,7 @@ Graine&nbsp;: <input type="number" name="graine" min="1" max="1000000" style="fo
 		$fun = $utilisables[rand(0,count($utilisables)-1)];
 		print "<span style='font-size: 50pt'><br></span>\n<span style='color: white'>";
 		print "\\(\\color{black}\\sf".$fun()."\\)";
-		print "</span><table><tr><td><ul style='font-size: 20pt'><br><br>Trouvez-lui...<br>";
+		print "</span><table width='50%'><tr><td><ul style='font-size: 20pt'><br><br>Trouvez-lui...<br>";
 		$questions = [];
 		foreach ($specifiques[$ecriture[$fun]] as $specifique)
 			$questions[count($questions)] = $specifique."\n";
