@@ -154,7 +154,7 @@
 **Erreurs envisagées :**
 - Pour les fractions, -(A/B) n'est pas (-A)/(-B), puisque prendre l'opposé revient à multiplier par -1, donc (-A)/(-B) = ((-1)×A)/((-1)×B) = A/B ≠ -(A/B). On a -(A/B) = (-A)/B et -(A/B) = A/(-B), toutefois.
 
-## une écriture avec aussi peu de symboles que possible !
+## une écriture avec aussi peu [chiffres,|signes,|séparateurs décimaux,|barre de fraction,|puissances,]{1-3} que possible !
 
 **Notes :** N'attendez pas forcément qu'une bonne réponse sorte parmi celles qui ont effectivement le moins de symboles possibles, le but est plutôt d'engager les élèves à qui trouvera l'écriture la plus concise.
 
